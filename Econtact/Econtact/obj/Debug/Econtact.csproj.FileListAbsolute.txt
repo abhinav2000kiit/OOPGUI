@@ -1,0 +1,10 @@
+C:\Users\KIIT\Desktop\Econtact\Econtact\bin\Debug\Econtact.exe.config
+C:\Users\KIIT\Desktop\Econtact\Econtact\bin\Debug\Econtact.exe
+C:\Users\KIIT\Desktop\Econtact\Econtact\bin\Debug\Econtact.pdb
+C:\Users\KIIT\Desktop\Econtact\Econtact\obj\Debug\Econtact.csprojAssemblyReference.cache
+C:\Users\KIIT\Desktop\Econtact\Econtact\obj\Debug\Econtact.Econtact.resources
+C:\Users\KIIT\Desktop\Econtact\Econtact\obj\Debug\Econtact.Properties.Resources.resources
+C:\Users\KIIT\Desktop\Econtact\Econtact\obj\Debug\Econtact.csproj.GenerateResource.cache
+C:\Users\KIIT\Desktop\Econtact\Econtact\obj\Debug\Econtact.csproj.CoreCompileInputs.cache
+C:\Users\KIIT\Desktop\Econtact\Econtact\obj\Debug\Econtact.exe
+C:\Users\KIIT\Desktop\Econtact\Econtact\obj\Debug\Econtact.pdb
