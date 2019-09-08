@@ -11,9 +11,9 @@ namespace Econtact.econtactClasses
 {
     class contactClass
     {
-        public double ContactId { get; set; }
-        public string Firstname { get; set; }
-        public string Lastname { get; set; }
+        public double ContactID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string ContactNo { get; set; }
         public string Address { get; set; }
         public string Gender { get; set; }
@@ -24,23 +24,23 @@ namespace Econtact.econtactClasses
 
         public DataTable Select()
         {
-            SqlConnection con = new SqlConnection(myconnstrng);
+            SqlConnection conn = new SqlConnection(myconnstrng);
             DataTable dt = new DataTable();
             try
             {
                 string sql1 = "SELECT * FROM tbl_contact";
-                SqlCommand cmnd = new SqlCommand(sql1, con);
-                SqlDataAdapter adpt = new SqlDataAdapter(cmnd);
-                con.Open();
-                adpt.Fill(dt);
+                SqlCommand cmd = new SqlCommand(sql1, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
             }
-            catch(Exception e1)
+            catch(Exception ex)
             {
 
             }
             finally
             {
-                con.Close();
+                conn.Close();
             }
             return dt;
         }
@@ -54,11 +54,11 @@ namespace Econtact.econtactClasses
             {
                 string sql = "INSERT INTO tbl_contact(FirstName,LastName,ContactNo,Address,Gender) VALUES (@FirstName,@LastName,@ContactNo,@Address,@Gender)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@FirstName",c.Firstname);
-                cmd.Parameters.AddWithValue("@LastName",c.Lastname);
+                cmd.Parameters.AddWithValue("@FirstName",c.FirstName);
+                cmd.Parameters.AddWithValue("@LastName",c.LastName);
                 cmd.Parameters.AddWithValue("@ContactNo",c.ContactNo);
-                cmd.Parameters.AddWithValue("@FAddress",c.Address);
-                cmd.Parameters.AddWithValue("@FirstName",c.Gender);
+                cmd.Parameters.AddWithValue("@Address",c.Address);
+                cmd.Parameters.AddWithValue("@Gender", c.Gender);
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
                 if(rows>0)
@@ -70,7 +70,7 @@ namespace Econtact.econtactClasses
                     isSUCCESS = false;
                 }
             }
-            catch(Exception e)
+            catch(Exception ex)
             {
 
             }
@@ -98,12 +98,12 @@ namespace Econtact.econtactClasses
                 //Created SQL Command
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 //create parameters to add value
-                cmd.Parameters.AddWithValue("@FirstName", c.Firstname);
-                cmd.Parameters.AddWithValue("@LastName", c.Lastname);
+                cmd.Parameters.AddWithValue("@FirstName", c.FirstName);
+                cmd.Parameters.AddWithValue("@LastName", c.LastName);
                 cmd.Parameters.AddWithValue("@ContactNo", c.ContactNo);
-                cmd.Parameters.AddWithValue("@FAddress", c.Address);
-                cmd.Parameters.AddWithValue("@FirstName", c.Gender);
-                cmd.Parameters.AddWithValue("ConatctID", c.ContactId);
+                cmd.Parameters.AddWithValue("@Address", c.Address);
+                cmd.Parameters.AddWithValue("@Gender", c.Gender);
+                cmd.Parameters.AddWithValue("ConatctID", c.ContactID);
                 //Open Database Connection
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
@@ -146,7 +146,7 @@ namespace Econtact.econtactClasses
 
                 //Creating sql command
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@ContactID", c.ContactId);
+                cmd.Parameters.AddWithValue("@ContactID", c.ContactID);
                 //Open connection
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
